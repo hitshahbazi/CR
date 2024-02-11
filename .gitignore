@@ -39,10 +39,4 @@
 # Mac files
 .DS_Store
 
-# Windows files
-Thumbs.db
-Desktop.ini
-
 # Encrypted client components directory
-/client/src/components/**/*
-/controllers/*

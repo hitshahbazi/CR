@@ -16,7 +16,7 @@ router.route('/').post(testUser, createJob).get(getAllJobs);
 
 // remember about :id
 router.route('/stats').get(showStats);
-router.route('/:id').delete(testUser, deleteJob).patch(testUser, updateJob);
+router.route('/:id').delete(testUser, deleteJob).patch(updateJob);
 router.route('/fetchJobById/:id').get(fetchJobById);
 
 export default router;
