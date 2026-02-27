@@ -1,0 +1,23 @@
+services:
+  mongo:
+    image: public.ecr.aws/docker/library/mongo:7
+    container_name: cr-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    container_name: cr-app
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+
+volumes:
+  mongo_data:
